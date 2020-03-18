@@ -131,34 +131,29 @@ describe('vCard', function() {
         });
 
         it('should format birthday as 20181201', function(done) {
-            let birthdayValue = getValueByFieldName('BDAY', lines);                        
+            let birthdayValue = getValueByFieldName('BDAY', lines);
             assert(birthdayValue === '20181201');
             done();
         });
 
-        it('should format anniversary as 20181201', function(done) {                    
-            let anniversaryValue = getValueByFieldName('ANNIVERSARY', lines);            
+        it('should format anniversary as 20181201', function(done) {
+            let anniversaryValue = getValueByFieldName('ANNIVERSARY', lines);
             assert(anniversaryValue === '20181201');
             done();
         });
 
-        it('should not crash when cellPhone is a large number, using 12345678900', function(done) {                    
-            testCard.cellPhone = 12345678900;            
+        it('should not crash when cellPhone is a large number, using 12345678900', function(done) {
+            testCard.cellPhone = 12345678900;
             done();
         });
 
-        it(`should have UID set as test value: ${TEST_VALUE_UID}`, (done) => {            
-            assert(getValueByFieldName('UID', lines) === TEST_VALUE_UID);            
+        it(`should have UID set as test value: ${TEST_VALUE_UID}`, (done) => {
+            assert(getValueByFieldName('UID', lines) === TEST_VALUE_UID);
             done();
         });
 
         it('should end with END:VCARD', function(done) {
             assert(lines.length > 2 && lines[lines.length-2] === 'END:VCARD');
-            done();
-        });
-
-        it(`should save to ${TEST_FILENAME}`, function(done) {
-            testCard.saveToFile(TEST_FILENAME);
             done();
         });
     });
