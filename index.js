@@ -160,6 +160,8 @@ var vCard = function() {
      */
     homeAddress: getMailingAddress(),
 
+    otherAddress: getMailingAddress(),
+
     /**
      * Home phone
      * @type {String}

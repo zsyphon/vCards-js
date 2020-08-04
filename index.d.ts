@@ -81,6 +81,8 @@ interface vCard {
      * Home mailing address
      */
     homeAddress: Address;
+    
+    otherAddress: Address;
 
     /**
      * Home phone
